@@ -1,0 +1,6 @@
+{
+    "domain": "ups_rpi",
+    "name": "UPS Rpi",
+    "version": "0.1.0",
+    "requirements": ["smbus2>=0.3.1"]
+}
