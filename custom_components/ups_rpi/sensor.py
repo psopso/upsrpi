@@ -14,6 +14,8 @@ from homeassistant.const import UnitOfElectricPotential
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+import homeassistant.helpers.config_validation as cv
+
 import voluptuous as vol
 
 CONF_VAR1 = "var1"
