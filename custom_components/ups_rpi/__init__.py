@@ -34,7 +34,3 @@ async def async_setup(hass, config):
     hass.data[DOMAIN] = { "upsrpiaddress": var1 }
     # Return boolean to indicate that initialization was successful."""
     return True
-
-async def _async_process_config(hass: HomeAssistant, config: ConfigType) -> bool:
-  return True
- 
