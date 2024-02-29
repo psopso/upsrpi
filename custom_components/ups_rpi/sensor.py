@@ -1,5 +1,5 @@
-"""Platform for sensor integration."""
 from __future__ import annotations
+"""Platform for sensor integration."""
 
 from .const import DOMAIN
 
