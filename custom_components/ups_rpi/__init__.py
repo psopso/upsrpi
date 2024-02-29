@@ -1,11 +1,12 @@
 DOMAIN = "ups_rpi"
-_LOGGER = logging.getLogger(__name__)
 
 import logging
 from homeassistant.const import EVENT_HOMEASSISTANT_START, EVENT_HOMEASSISTANT_STOP
 import homeassistant.helpers.config_validation as cv
 import voluptuous as vol
 import threading
+
+_LOGGER = logging.getLogger(__name__)
 
 CONF_VAR1 = "var1"
 CONF_VAR2 = "var2"
