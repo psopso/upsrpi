@@ -26,7 +26,7 @@ async def async_setup(hass, config):
     conf = config[DOMAIN]
     var1 = conf.get(CONF_VAR1)
     var2 = conf.get(CONF_VAR2)
-    print("Debug: "+var1) 
+    _LOGGER.warning("Debug %s", var1)
     # hass.states.async_set("hello_state.world", "Paulus")
 
     # Return boolean to indicate that initialization was successful.
