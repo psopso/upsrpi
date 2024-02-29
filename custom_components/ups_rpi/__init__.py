@@ -32,6 +32,6 @@ async def async_setup(hass, config):
     # Return boolean to indicate that initialization was successful.
     return True
 
-def create_rest_data_from_config(hass: HomeAssistant, config: ConfigType) -> RestData:
+async def _async_process_config(hass: HomeAssistant, config: ConfigType) -> bool:
   return True
-  
+ 
