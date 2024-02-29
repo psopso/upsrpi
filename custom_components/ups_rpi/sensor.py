@@ -43,7 +43,7 @@ class VoltageSensor(SensorEntity):
         This is the only method that should fetch new data for Home Assistant.
         """
         self._attr_native_value = 3.7
-        _LOGGER.warning("Debug Domain: "+DOMAIN+":"+self.hass.data[DOMAIN][upsrpiaddress])
+        _LOGGER.warning("Debug Domain: "+DOMAIN+":"+self.hass.data[DOMAIN]["upsrpiaddress"])
 
 class CapacitySensor(SensorEntity):
     """Representation of a Sensor."""
