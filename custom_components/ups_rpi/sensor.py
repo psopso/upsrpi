@@ -5,6 +5,8 @@ import logging
 import homeassistant.helpers.config_validation as cv
 import voluptuous as vol
 
+from .readvoltage import readVoltage
+
 from .const import DOMAIN
 
 from homeassistant.components.sensor import (
@@ -57,6 +59,7 @@ class VoltageSensor(SensorEntity):
 
         This is the only method that should fetch new data for Home Assistant.
         """
+        readVoltage()
         self._attr_native_value = 3.7
         _LOGGER.warning("Debug Domain: "+DOMAIN+"::"+self.var1)
 
