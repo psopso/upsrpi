@@ -3,7 +3,7 @@ from __future__ import annotations
 """Platform for sensor integration."""
 import logging
 import homeassistant.helpers.config_validation as cv
-import voluptuos as vol
+import voluptuous as vol
 
 from .const import DOMAIN
 
