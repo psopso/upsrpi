@@ -16,8 +16,7 @@ from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
 import homeassistant.helpers.config_validation as cv
-
-import voluptuous as vol
+import voluptuos as vol
 
 CONF_VAR1 = "var1"
 CONF_VAR2 = "var2"
@@ -27,24 +26,6 @@ from homeassistant.const import PERCENTAGE
 
 _LOGGER = logging.getLogger(__name__)
 
-CONFIG_SCHEMA = vol.Schema(
-	{
-		DOMAIN: vol.Schema({
-			vol.Required(CONF_VAR1): cv.string,
-			vol.Optional(CONF_VAR2, default=9600): cv.positive_int,
-		})
-	},
-	extra=vol.ALLOW_EXTRA,
-)
-SENSOR_SCHEMA = vol.Schema(
-	{
-		DOMAIN: vol.Schema({
-			vol.Required(CONF_VAR1): cv.string,
-			vol.Optional(CONF_VAR2, default=9600): cv.positive_int,
-		})
-	},
-	extra=vol.ALLOW_EXTRA,
-)
 
 PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
    {
@@ -62,7 +43,6 @@ def setup_platform(
     """Set up the sensor platform."""
     var1 = config[CONF_VAR1];
     add_entities([VoltageSensor(var1),CapacitySensor()])
-
 
 class VoltageSensor(SensorEntity):
     """Representation of a Sensor."""
