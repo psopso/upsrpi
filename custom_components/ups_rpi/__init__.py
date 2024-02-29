@@ -6,7 +6,6 @@ from homeassistant.const import EVENT_HOMEASSISTANT_START, EVENT_HOMEASSISTANT_S
 import homeassistant.helpers.config_validation as cv
 import voluptuous as vol
 import threading
-from . import rcswitch
 
 CONF_VAR1 = "var1"
 CONF_VAR2 = "var2"
@@ -23,6 +22,10 @@ CONFIG_SCHEMA = vol.Schema(
 )
 
 async def async_setup(hass, config):
+    conf = config[DOMAIN]
+	comport = conf.get(CONF_VAR1)
+	comspeed = conf.get(CONF_VAR2)
+	
 #    hass.states.async_set("hello_state.world", "Paulus")
 
     # Return boolean to indicate that initialization was successful.
