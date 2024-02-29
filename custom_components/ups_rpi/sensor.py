@@ -1,5 +1,6 @@
 from __future__ import annotations
 """Platform for sensor integration."""
+import logger
 
 from .const import DOMAIN
 
@@ -14,6 +15,8 @@ from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
 
 from homeassistant.const import PERCENTAGE
+
+_LOGGER = logging.getLogger(__name__)
 
 def setup_platform(
     hass: HomeAssistant,
