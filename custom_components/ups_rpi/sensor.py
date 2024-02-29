@@ -11,7 +11,7 @@ from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
 
-
+from homeassistant.const import PERCENTAGE
 def setup_platform(
     hass: HomeAssistant,
     config: ConfigType,
