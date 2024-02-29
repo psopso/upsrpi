@@ -1,7 +1,7 @@
 """Platform for sensor integration."""
-from .const import DOMAIN
-
 from __future__ import annotations
+
+from .const import DOMAIN
 
 from homeassistant.components.sensor import (
     SensorDeviceClass,
