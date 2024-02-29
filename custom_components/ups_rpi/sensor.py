@@ -9,6 +9,7 @@ from homeassistant.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorStateClass,
+    PLATFORM_SCHEMA,
 )
 from homeassistant.const import UnitOfElectricPotential
 from homeassistant.core import HomeAssistant
@@ -44,16 +45,13 @@ SENSOR_SCHEMA = vol.Schema(
 	},
 	extra=vol.ALLOW_EXTRA,
 )
-PLATFORM_SCHEMA = vol.Schema(
-	{
-		DOMAIN: vol.Schema({
-			vol.Required(CONF_VAR1): cv.string,
-			vol.Optional(CONF_VAR2, default=9600): cv.positive_int,
-		})
-	},
-	extra=vol.ALLOW_EXTRA,
-)
 
+PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
+   {
+       vol.Required(CONF_VAR1): cv.string,
+       vol.Optional(CONF_VAR2, default=DEFAULT_NAME): cv.string,
+   }
+   )
 
 def setup_platform(
     hass: HomeAssistant,
