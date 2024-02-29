@@ -1,4 +1,4 @@
-DOMAIN = "ups_rpi"
+from .const import DOMAIN
 
 import logging
 from homeassistant.const import EVENT_HOMEASSISTANT_START, EVENT_HOMEASSISTANT_STOP

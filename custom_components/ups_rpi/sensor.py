@@ -1,4 +1,6 @@
 """Platform for sensor integration."""
+from .const import DOMAIN
+
 from __future__ import annotations
 
 from homeassistant.components.sensor import (
@@ -12,7 +14,6 @@ from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
 
 from homeassistant.const import PERCENTAGE
-from .const import DOMAIN
 
 def setup_platform(
     hass: HomeAssistant,
