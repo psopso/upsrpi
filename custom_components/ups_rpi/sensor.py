@@ -12,6 +12,8 @@ from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
 
 from homeassistant.const import PERCENTAGE
+from .const import DOMAIN
+
 def setup_platform(
     hass: HomeAssistant,
     config: ConfigType,
@@ -36,6 +38,7 @@ class VoltageSensor(SensorEntity):
         This is the only method that should fetch new data for Home Assistant.
         """
         self._attr_native_value = 3.7
+        _LOGGER.warning("Debug Domain: "+DOMAIN)
 
 class CapacitySensor(SensorEntity):
     """Representation of a Sensor."""
