@@ -21,11 +21,9 @@ import voluptuos as vol
 CONF_VAR1 = "var1"
 CONF_VAR2 = "var2"
 
-
 from homeassistant.const import PERCENTAGE
 
 _LOGGER = logging.getLogger(__name__)
-
 
 PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
    {
@@ -60,7 +58,7 @@ class VoltageSensor(SensorEntity):
         This is the only method that should fetch new data for Home Assistant.
         """
         self._attr_native_value = 3.7
-        _LOGGER.warning("Debug Domain: "+DOMAIN+":"+self.var1)
+        _LOGGER.warning("Debug Domain: "+DOMAIN+"::"+self.var1)
 
 class CapacitySensor(SensorEntity):
     """Representation of a Sensor."""
