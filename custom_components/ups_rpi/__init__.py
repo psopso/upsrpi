@@ -22,17 +22,12 @@ CONFIG_SCHEMA = vol.Schema(
 	extra=vol.ALLOW_EXTRA,
 )
 
-var1 = ""
-var2 = ""
-
 async def async_setup(hass, config):
     conf = config[DOMAIN]
-    global var1
     var1 = conf.get(CONF_VAR1)
-    global var2
     var2 = conf.get(CONF_VAR2)
     _LOGGER.warning("Debug %s %d", var1, var2)
     # hass.states.async_set("hello_state.world", "Paulus")
-
+    hass.data[DOMAIN] = { "upsrpiaddress": var1 }
     # Return boolean to indicate that initialization was successful.
     return True
