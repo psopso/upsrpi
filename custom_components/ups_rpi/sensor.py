@@ -49,7 +49,7 @@ SENSOR_SCHEMA = vol.Schema(
 PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
    {
        vol.Required(CONF_VAR1): cv.string,
-       vol.Optional(CONF_VAR2, default=DEFAULT_NAME): cv.string,
+       vol.Optional(CONF_VAR2, default="df"): cv.string,
    }
    )
 
