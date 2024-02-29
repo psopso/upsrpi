@@ -22,8 +22,8 @@ CONFIG_SCHEMA = vol.Schema(
 	extra=vol.ALLOW_EXTRA,
 )
 
-var1
-var2
+var1 = ""
+var2 = ""
 
 async def async_setup(hass, config):
     conf = config[DOMAIN]
