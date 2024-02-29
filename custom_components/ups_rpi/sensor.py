@@ -14,6 +14,8 @@ from homeassistant.const import UnitOfElectricPotential
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+import voluptuous as vol
+
 
 from homeassistant.const import PERCENTAGE
 
@@ -29,6 +31,15 @@ CONFIG_SCHEMA = vol.Schema(
 	extra=vol.ALLOW_EXTRA,
 )
 SENSOR_SCHEMA = vol.Schema(
+	{
+		DOMAIN: vol.Schema({
+			vol.Required(CONF_VAR1): cv.string,
+			vol.Optional(CONF_VAR2, default=9600): cv.positive_int,
+		})
+	},
+	extra=vol.ALLOW_EXTRA,
+)
+PLATFORM_SCHEMA = vol.Schema(
 	{
 		DOMAIN: vol.Schema({
 			vol.Required(CONF_VAR1): cv.string,
