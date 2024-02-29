@@ -2,6 +2,8 @@ from __future__ import annotations
 
 """Platform for sensor integration."""
 import logging
+import homeassistant.helpers.config_validation as cv
+import voluptuos as vol
 
 from .const import DOMAIN
 
@@ -15,8 +17,6 @@ from homeassistant.const import UnitOfElectricPotential
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-import homeassistant.helpers.config_validation as cv
-import voluptuos as vol
 
 CONF_VAR1 = "var1"
 CONF_VAR2 = "var2"
