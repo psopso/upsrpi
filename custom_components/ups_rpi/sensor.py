@@ -28,6 +28,15 @@ CONFIG_SCHEMA = vol.Schema(
 	},
 	extra=vol.ALLOW_EXTRA,
 )
+SENSOR_SCHEMA = vol.Schema(
+	{
+		DOMAIN: vol.Schema({
+			vol.Required(CONF_VAR1): cv.string,
+			vol.Optional(CONF_VAR2, default=9600): cv.positive_int,
+		})
+	},
+	extra=vol.ALLOW_EXTRA,
+)
 
 
 def setup_platform(
