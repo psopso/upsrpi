@@ -27,7 +27,7 @@ class VoltageSensor(SensorEntity):
 
     _attr_name = "UPS Voltage"
     _attr_native_unit_of_measurement = UnitOfElectricPotential.VOLT
-    _attr_device_class = SensorDeviceClass.Voltage
+    _attr_device_class = SensorDeviceClass.VOLTAGE
     _attr_state_class = SensorStateClass.MEASUREMENT
 
     def update(self) -> None:
@@ -42,7 +42,7 @@ class CapacitySensor(SensorEntity):
 
     _attr_name = "UPS Capacity"
     _attr_native_unit_of_measurement = PERCENTAGE
-    _attr_device_class = SensorDeviceClass.Capacity
+    _attr_device_class = SensorDeviceClass.BATTERY
     _attr_state_class = SensorStateClass.MEASUREMENT
 
     def update(self) -> None:
