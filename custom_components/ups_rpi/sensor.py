@@ -1,4 +1,5 @@
 from __future__ import annotations
+
 """Platform for sensor integration."""
 import logger
 
