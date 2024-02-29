@@ -16,6 +16,9 @@ from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
 import voluptuous as vol
 
+CONF_VAR1 = "var1"
+CONF_VAR2 = "var2"
+
 
 from homeassistant.const import PERCENTAGE
 
