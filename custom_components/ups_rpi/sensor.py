@@ -46,6 +46,7 @@ class VoltageSensor(SensorEntity):
         """
         self._attr_native_value = 3.7
         _LOGGER.warning("Debug Domain: "+DOMAIN)
+        _LOGGER.warning("Debug vars: "+var1)
 
 class CapacitySensor(SensorEntity):
     """Representation of a Sensor."""
