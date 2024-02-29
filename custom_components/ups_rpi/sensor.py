@@ -17,6 +17,8 @@ from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
 
 from homeassistant.const import PERCENTAGE
 
+from . import var1, var2
+
 _LOGGER = logging.getLogger(__name__)
 
 def setup_platform(
