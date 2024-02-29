@@ -6,7 +6,7 @@ from homeassistant.components.sensor import (
     SensorEntity,
     SensorStateClass,
 )
-from homeassistant.const import UnitOfTemperature
+from homeassistant.const import UnitOfElectricPotential
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
@@ -19,15 +19,15 @@ def setup_platform(
     discovery_info: DiscoveryInfoType | None = None
 ) -> None:
     """Set up the sensor platform."""
-    add_entities([ExampleSensor(),ExampleSensor1()])
+    add_entities([VoltageSensor(),CapacitySensor()])
 
 
-class ExampleSensor(SensorEntity):
+class VoltageSensor(SensorEntity):
     """Representation of a Sensor."""
 
-    _attr_name = "Example Temperature"
-    _attr_native_unit_of_measurement = UnitOfTemperature.CELSIUS
-    _attr_device_class = SensorDeviceClass.TEMPERATURE
+    _attr_name = "UPS Voltage"
+    _attr_native_unit_of_measurement = UnitOfElectricPotential.VOLT
+    _attr_device_class = SensorDeviceClass.Voltage
     _attr_state_class = SensorStateClass.MEASUREMENT
 
     def update(self) -> None:
@@ -35,14 +35,14 @@ class ExampleSensor(SensorEntity):
 
         This is the only method that should fetch new data for Home Assistant.
         """
-        self._attr_native_value = 23
+        self._attr_native_value = 3.7
 
-class ExampleSensor1(SensorEntity):
+class CapacitySensor(SensorEntity):
     """Representation of a Sensor."""
 
-    _attr_name = "Example Temperature p"
-    _attr_native_unit_of_measurement = UnitOfTemperature.CELSIUS
-    _attr_device_class = SensorDeviceClass.TEMPERATURE
+    _attr_name = "UPS Capacity"
+    _attr_native_unit_of_measurement = PERCENTAGE
+    _attr_device_class = SensorDeviceClass.Capacity
     _attr_state_class = SensorStateClass.MEASUREMENT
 
     def update(self) -> None:
@@ -50,4 +50,4 @@ class ExampleSensor1(SensorEntity):
 
         This is the only method that should fetch new data for Home Assistant.
         """
-        self._attr_native_value = 23
+        self._attr_native_value = 95
