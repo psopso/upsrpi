@@ -26,7 +26,7 @@ CONFIG_SCHEMA = vol.Schema(
 )
 
 async def async_setup(hass, config):
-"""    conf = config[DOMAIN]
+    """    conf = config[DOMAIN]
     var1 = conf.get(CONF_VAR1)
     var2 = conf.get(CONF_VAR2)
     _LOGGER.warning("Debug %s %d", var1, var2)
