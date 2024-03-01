@@ -21,7 +21,7 @@ from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
 
-CONF_VAR1 = "var1"
+CONF_VAR1 = "upsrpiaddress"
 CONF_VAR2 = "var2"
 
 from homeassistant.const import PERCENTAGE
@@ -42,14 +42,14 @@ def setup_platform(
     discovery_info: DiscoveryInfoType | None = None
 ) -> None:
     """Set up the sensor platform."""
-    var1 = config[CONF_VAR1];
-    add_entities([VoltageSensor(var1),CapacitySensor()])
+    upsrpiaddress = config[CONF_VAR1];
+    add_entities([VoltageSensor(upsrpiaddress),CapacitySensor()])
 
 class VoltageSensor(SensorEntity):
     """Representation of a Sensor."""
-    def __init__(self, var1) -> None:
+    def __init__(self, upsrpiaddress) -> None:
       super().__init__()
-      self.var1 = var1
+      self.upsrpiaddress = upsrpiaddress
     _attr_name = "UPS Voltage"
     _attr_native_unit_of_measurement = UnitOfElectricPotential.VOLT
     _attr_device_class = SensorDeviceClass.VOLTAGE
@@ -61,7 +61,7 @@ class VoltageSensor(SensorEntity):
         This is the only method that should fetch new data for Home Assistant.
         """
         self._attr_native_value = readVoltage()
-        _LOGGER.warning("Debug Domain: "+DOMAIN+"::"+self.var1)
+        _LOGGER.warning("Debug Domain: "+DOMAIN+"::"+self.upsrpiaddress)
 
 class CapacitySensor(SensorEntity):
     """Representation of a Sensor."""
