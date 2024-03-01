@@ -61,8 +61,8 @@ class VoltageSensor(SensorEntity):
 
         This is the only method that should fetch new data for Home Assistant.
         """
-        self._attr_native_value = readVoltage()
-        _LOGGER.warning("Debug Domain: "+DOMAIN+"::"+self.upsrpiaddress)
+        self._attr_native_value = round(readVoltage(),1)
+        #_LOGGER.warning("Debug Domain: "+DOMAIN+"::"+self.upsrpiaddress)
 
 class CapacitySensor(SensorEntity):
     """Representation of a Sensor."""
@@ -77,4 +77,4 @@ class CapacitySensor(SensorEntity):
 
         This is the only method that should fetch new data for Home Assistant.
         """
-        self._attr_native_value = readCapacity()
+        self._attr_native_value = round(readCapacity(),1)
