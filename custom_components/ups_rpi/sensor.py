@@ -50,6 +50,7 @@ class VoltageSensor(SensorEntity):
     """Representation of a Sensor."""
     def __init__(self, upsrpiaddress) -> None:
       super().__init__()
+      self._attr_unique_id = "upsrpivoltage"
       self.upsrpiaddress = upsrpiaddress
     _attr_name = "UPS Voltage"
     _attr_native_unit_of_measurement = UnitOfElectricPotential.VOLT
@@ -66,6 +67,10 @@ class VoltageSensor(SensorEntity):
 
 class CapacitySensor(SensorEntity):
     """Representation of a Sensor."""
+    def __init__(self, upsrpiaddress) -> None:
+      super().__init__()
+      self._attr_unique_id = "upsrpicapacity"
+      self.upsrpiaddress = upsrpiaddress
 
     _attr_name = "UPS Capacity"
     _attr_native_unit_of_measurement = PERCENTAGE
