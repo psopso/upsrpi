@@ -21,7 +21,7 @@ from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
 
-CONF_VAR1 = "upsrpiaddress"
+CONF_VAR1 = "Address"
 CONF_VAR2 = "var2"
 
 from homeassistant.const import PERCENTAGE
