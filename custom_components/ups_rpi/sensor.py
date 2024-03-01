@@ -44,7 +44,7 @@ def setup_platform(
 ) -> None:
     """Set up the sensor platform."""
     upsrpiaddress = config[CONF_VAR1];
-    add_entities([VoltageSensor(upsrpiaddress),CapacitySensor()])
+    add_entities([VoltageSensor(upsrpiaddress),CapacitySensor(upsrpiaddress)])
 
 class VoltageSensor(SensorEntity):
     """Representation of a Sensor."""
